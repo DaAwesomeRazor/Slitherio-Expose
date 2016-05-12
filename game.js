@@ -1,8 +1,14 @@
+
 var testing = false;
 if (0 <= window.location.href.indexOf("/testing")) {
   testing = true;
 }
 window.slither = []
+window.slither.hooks = {
+drawLeaderBoard: function() {
+return;
+},
+}
 var forcing = false;
 var ua = navigator.userAgent.toLowerCase();
 var is_android = 0 <= ua.indexOf("android");
@@ -5485,8 +5491,8 @@ function connect() {
                         J++;
                         score = Math.floor(15 * (fpsls[L] + F / fmlts[L] - 1) - 5) / 1;
                         t = M == I ? 1 : 0.7 * (0.3 + 0.7 * (1 - J / 10));
-						window.slither.top = [C,u.x]
-						if (window.slther.drawLeaderboard) {
+						window.slither.top = [h]
+						if (window.slther.hooks.drawLeaderboard) {
                         C += '<span style="opacity:' + t + "; color:" + per_color_imgs[A].cs + ';">' + score + "</span><BR>";
                         u += '<span style="opacity:' + t + "; color:" + per_color_imgs[A].cs + ";" + (M == I ? "font-weight:bold;" : "") + '">' + h + "</span><BR>";
                         x += '<span style="opacity:' + t + "; color:" + per_color_imgs[A].cs + ';">#' + J + "</span><BR>";
